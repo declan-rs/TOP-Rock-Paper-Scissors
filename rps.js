@@ -9,3 +9,16 @@ function getComputerChoice() {
         return "scissors";
     }
 }
+
+function getHumanChoice() {
+    while(true) {
+        ans = prompt("Rock paper or scissors? ");
+        if(ans == "rock") {
+            return "rock";
+        } else if(ans == "paper") {
+            return "paper";
+        } else if(ans == "scissors") {
+            return "scissors";
+        }
+    }
+}
