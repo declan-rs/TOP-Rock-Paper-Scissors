@@ -1,24 +1,26 @@
 let humanScore = 0;
 let computerScore = 0;
 
-// Create buttons
+// Create buttons etc
+const game = document.querySelector("#game");
+
 const rock = document.createElement("button");
 rock.textContent = "Rock";
 rock.addEventListener("click", () => playRound("rock", getComputerChoice()));
-document.body.appendChild(rock);
+game.appendChild(rock);
 
 const paper = document.createElement("button");
 paper.textContent = "Paper";
 paper.addEventListener("click", () => playRound("paper", getComputerChoice()));
-document.body.appendChild(paper);
+game.appendChild(paper);
 
 const scissors = document.createElement("button");
 scissors.textContent = "Scissors";
 scissors.addEventListener("click", () => playRound("scissors", getComputerChoice()));
-document.body.appendChild(scissors);
+game.appendChild(scissors);
 
 const div = document.createElement("div");
-document.body.appendChild(div);
+game.appendChild(div);
 
 function getComputerChoice() {
     rand = Math.random();
@@ -101,14 +103,17 @@ function checkDone() {
     if(humanScore == computerScore) {
         let result = document.createElement("p");
         result.textContent = "Final result: Draw!";
+        result.style.color = "lightcoral";
         div.appendChild(result);
     } else if(humanScore > computerScore) {
         let result = document.createElement("p");
         result.textContent = "Final result: You win!";
+        result.style.color = "lightcoral";
         div.appendChild(result);
     } else if(humanScore < computerScore) {
         let result = document.createElement("p");
         result.textContent = "Final result: You lose!";
+        result.style.color = "lightcoral";
         div.appendChild(result);
     }
 
