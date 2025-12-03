@@ -1,5 +1,6 @@
 let humanScore = 0;
 let computerScore = 0;
+
 // Create buttons
 const rock = document.createElement("button");
 rock.textContent = "Rock";
@@ -42,7 +43,6 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
-    // Returns 0 if draw, 1 if human won or 2 if computer won
     if(humanChoice == "rock" && computerChoice == "scissors") {
         console.log("You win! Rock beats scissors.");
         humanScore++;
@@ -69,4 +69,23 @@ function playRound(humanChoice, computerChoice) {
         console.log("Draw! Both chose scissors.");
     }
 
+    checkDone();
+}
+
+function checkDone() {
+    if(humanScore < 5 && computerScore < 5) {
+        return;
+    }
+
+    if(humanScore == computerScore) {
+        console.log("Final result: Draw!");
+    } else if(humanScore > computerScore) {
+        console.log("Final result: You win!");
+    } else if(humanScore < computerScore) {
+        console.log("Final result: You lose!");
+    }
+
+    rock.disabled = true;
+    paper.disabled = true;
+    scissors.disabled = true;
 }
