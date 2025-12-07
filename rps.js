@@ -103,17 +103,17 @@ function checkDone() {
     if(humanScore == computerScore) {
         let result = document.createElement("p");
         result.textContent = "Final result: Draw!";
-        result.style.color = "lightcoral";
+        result.style.fontWeight = "bold";
         div.appendChild(result);
     } else if(humanScore > computerScore) {
         let result = document.createElement("p");
         result.textContent = "Final result: You win!";
-        result.style.color = "lightcoral";
+        result.style.fontWeight = "bold";
         div.appendChild(result);
     } else if(humanScore < computerScore) {
         let result = document.createElement("p");
         result.textContent = "Final result: You lose!";
-        result.style.color = "lightcoral";
+        result.style.fontWeight = "bold";
         div.appendChild(result);
     }
 
